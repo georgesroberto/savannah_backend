@@ -25,10 +25,12 @@ INSTALLED_APPS = [
 
     # INSTALLED PACKAGES
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.openid_connect',
+    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.openid_connect',
     'rest_framework',
     'rest_framework.authtoken', 
 ]
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -111,6 +114,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# LOGIN_URL = '/admin/login/'
+LOGIN_REDIRECT_URL = '/api/customers/'
 
 
 AUTHENTICATION_BACKENDS = (
