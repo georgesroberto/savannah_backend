@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'orders',
 
     # INSTALLED PACKAGES
+    'django_filters',
     'django.contrib.sites',
 
     'allauth',

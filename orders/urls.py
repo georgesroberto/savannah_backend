@@ -4,15 +4,19 @@ Default urls Configuration for savannah/orders
 
 from django.urls import path
 from .views import (
+    api_root,
     home,
     CustomerListCreateView,
     CustomerRetrieveUpdateDestroyView,
     OrderListCreateView,
-    OrderRetrieveUpdateDestroyView
+    OrderRetrieveUpdateDestroyView,
 )
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', home, name='dashboard'),
+
+    # API Root URL
+    path('api-root/', api_root, name='api-root'),
 
     # Customer URLs
     path('customers/', CustomerListCreateView.as_view(), name='customer-list-create'),
