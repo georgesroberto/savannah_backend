@@ -4,6 +4,7 @@ Default urls Configuration for savannah/orders
 
 from django.urls import path
 from .views import (
+    home,
     CustomerListCreateView,
     CustomerRetrieveUpdateDestroyView,
     OrderListCreateView,
@@ -11,6 +12,8 @@ from .views import (
 )
 
 urlpatterns = [
+    path('', home, name='home'),
+
     # Customer URLs
     path('customers/', CustomerListCreateView.as_view(), name='customer-list-create'),
     path('customers/<int:pk>/', CustomerRetrieveUpdateDestroyView.as_view(), name='customer-detail'),
